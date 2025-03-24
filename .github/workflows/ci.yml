@@ -19,7 +19,7 @@ jobs:
         java-version: '17'
 
     - name: Compile Java code
-      run: javac hello.java
+      run: javac Hello.java
 
-    - name: Run Java program
-      run: java hello
+    - name: Run Java code
+      run: java Hello
