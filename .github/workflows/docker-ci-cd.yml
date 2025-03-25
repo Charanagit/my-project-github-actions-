@@ -1,0 +1,43 @@
+name: Docker CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-push-java:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: charanamunasinghe
+          password: taniya20xy
+
+      - name: Build Java Docker Image
+        run: docker build -t charanamunasinghe/my-java-app:latest -f Dockerfile .
+
+      - name: Push Java Docker Image to Docker Hub
+        run: docker push charanamunasinghe/my-java-app:latest
+
+  build-and-push-python:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: charanamunasinghe
+          password: taniya20xy
+
+      - name: Build Python Docker Image
+        run: docker build -t charanamunasinghe/my-python-app:latest -f Dockerfile.python .
+
+      - name: Push Python Docker Image to Docker Hub
+        run: docker push charanamunasinghe/my-python-app:latest
