@@ -41,6 +41,6 @@ if __name__ == "__main__":
     print("Character Count:", char_count)
 
     # Performing calculations
-    numbers = [1, 2, 3, 4, 5]
+    numbers = [1, 2, 3, 4, 7]
     total = calculate_sum(numbers)
     print("Sum of Numbers:", total)
