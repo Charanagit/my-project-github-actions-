@@ -44,3 +44,4 @@ if __name__ == "__main__":
     numbers = [1, 2, 3, 4, 7]
     total = calculate_sum(numbers)
     print("Sum of Numbers:", total)
+    
